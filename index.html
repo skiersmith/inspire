@@ -3,25 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Inspire</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body id="body">
-	<div id="weather">
-		Your Weather Template
-	</div>
+	<div class="bodyheader container">
+		<div id="weather">
 
-	<div id="quote">
-		The Quote
+			<!-- <div class='card'>
+				<div class="">
+					<h4>Temp:${temp}°F</h4>
+				</div>
+			</div> -->
+		</div>
+		<!-- <span id="cloudy" class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+				<span id="sunny" class="glyphicon glyphicon-sun" aria-hidden="true"></span> -->
 	</div>
+	<div id="hihihi">
 
+	</div>
 	<div id="todo">
-		<form onsubmit=""></form>
-		A Todo List
+		<form name="todolist" onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+			<input type="checkbox" >
+			<input type="text" name="newToDo">
+			<!-- <input type="submit" name="formPost"> -->
+			<!-- <input type="radio" name="todo1" id="todo1">
+			<label for="todo1">to do item 1</label> -->
+		</form>
 	</div>
+	<div class="bodyfooter container">
+		<div id="quote">
 
-
-
+		</div>
+	</div>
 
 	<!--JS Libraries-->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

@@ -6,9 +6,16 @@ function ImageService() {
 	this.getImage = function (callWhenDone) {
 		// ^^^^^^^ How do you call this function?
 		return $.get(apiUrl, function (res) {
-			res = JSON.parse(res)
-			console.log('Image Data:', res)
-			callWhenDone(res)
+				res = JSON.parse(res)
+				//localStorage.setItem('image', JSON.stringify(res))
+				if(res.large_url){
+					console.log('Large URL: ', res)
+					callWhenDone(res)
+				} else {
+					console.log('other')
+					
+				}
+				//console.log('Image Data:', res)
 		})
 	}
 }
