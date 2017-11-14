@@ -9,6 +9,7 @@
 
 #weather {
   background-color: rgba(0, 0, 0, 0.5);
+  width: 10rem;
 }
 
 #quote {
@@ -17,4 +18,9 @@
 
 #todo {
   background-color: rgba(0, 0, 0, 0.5);
+  width: 30rem;
+}
+
+input[type=text] {
+  color: black;
 }
