@@ -59,15 +59,17 @@ function TodoService() {
 
 	this.removeTodo = function (todoId, getTodos) {
 		// Umm this one is on you to write.... It's also unique, like the ajax call above. The method is a DELETE
+		var deleteTodo = todoList[todoId]
+		
 		$.ajax({
 			method: 'DELETE',
 			contentType: 'application/json',
 			url: baseUrl + '/' + todoId,
-			data: JSON.stringify(todoId)
+			data: JSON.stringify(deleteTodo)
 		})
 			.then(function (res) {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
-				this.getTodos(draw)
+				getTodos()
 			})
 			.fail(logError)
 	}

@@ -25,16 +25,17 @@ function TodoController() {
 		//BUILD YOUR TODO TEMPLATE HERE
 		var template = ''
 		//DONT FORGET TO LOOP
-		debugger
+		
 	
 		for (var i = 0; i < todos.length; i++) {
 			var todo = todos[i]
-			debugger
+			
 			template += `
-			<input type="checkbox" onclick="app.controllers.todoController.toggleTodoStatus(${i})" name="${i}"><label for="${i}">${todo.name}</label>
+			<input type="checkbox" onclick="app.controllers.todoController.toggleTodoStatus(${i})" name="${i}"><label for="${i}">${todo.name}</label> <i class="glyphicon glyphicon-trash" onclick="app.controllers.todoController.removeTodo(${i})"></i>
 			`
 		}
-		document.getElementById('hihihi').innerHTML = template
+		document.getElementById('todolist').innerHTML = template
+console.log(template)
 	}
 
 	this.addTodoFromForm = function (e) {
@@ -59,15 +60,9 @@ function TodoController() {
 		// YEP THATS IT FOR ME
 	}
 
-	this.removeTodo = function () {
+	this.removeTodo = function (todoId) {
 		// ask the service to run the remove todo with this id
-		$.ajax({
-            url: baseUrl + '/' + index,
-			method: 'DELETE'
-			
-        })
-            .then(getAutos)
-            .fail(logError)
+		todoService.removeTodo(todoId, getTodos)
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
 
