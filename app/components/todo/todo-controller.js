@@ -21,12 +21,12 @@ function TodoController() {
 
 
 	function draw(todos) {
+		var counter = todos.length
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
 		var template = ''
 		//DONT FORGET TO LOOP
-		
-	
+		template += `<p>Todos ${counter}</p>`
 		for (var i = 0; i < todos.length; i++) {
 			var todo = todos[i]
 			
@@ -46,7 +46,7 @@ console.log(template)
 
 		//PASSES THE NEW TODO TO YOUR SERVICE
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
-		//YOU SHOULDN'T NEED TO CHANGE THIS
+		//YOU SHOULDN'T NEED TO CHANGE THIS 
 		todoService.addTodo(todo, getTodos)
 		//^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
 	}
